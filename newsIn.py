@@ -1,5 +1,8 @@
 import tushare as ts
 import time  
+import pymysql
+pymysql.install_as_MySQLdb()
+
 from sqlalchemy import create_engine
 engine = create_engine('mysql://root:Zzc7382788@rm-uf65wbvomnp2mufa6o.mysql.rds.aliyuncs.com:3306/playebean?charset=utf8')   
   
@@ -20,7 +23,7 @@ def getNews():
 while 1 : 
 #   print time.time()  
 #   df= ts.get_latest_news(top=5,show_content=True) #显示最新5条新闻，并打印出新闻内容
-    print time.time()  
+#    print time.time()  
     getNews() 
     time.sleep(60)  
    
