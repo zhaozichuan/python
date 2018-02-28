@@ -20,7 +20,7 @@ class Ui_Dialog(object):
         self.textEdit.setObjectName("textEdit")
 
         self.retranslateUi(Dialog)
-        self.pushButton.clicked.connect(self.slot1)
+        self.pushButton.clicked.connect(slot1)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
