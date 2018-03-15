@@ -32,7 +32,7 @@ def downk():
     path = 'D:\\zzc\Kfile'
 #    day=(datetime.date.today() - datetime.timedelta(days=1)).strftime('%Y%m%d')
     day=(datetime.date.today()).strftime('%Y%m%d')
-   
+      
     print (datetime1()+"start")
     
     conn = pymysql.connect(user='root', passwd='Zzc7382788',  
