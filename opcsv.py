@@ -7,6 +7,7 @@ Created on Thu Mar 15 08:29:02 2018
 import pymysql
 import pandas as pd
 import datetime
+import time
 from time import strftime, localtime
 """
 path = r'D:\zzc\HQ_ALL\hq\fileKLine\600030.csv'
@@ -27,7 +28,7 @@ def datetime1():
 
 
 def downk():
-    path = 'D:\\zzc\\Kfile\\'
+    path = '/data/k/'
     
     day=(datetime.date.today() - datetime.timedelta(days=1)).strftime('%Y%m%d')
     print (datetime1()+"start")
@@ -54,12 +55,13 @@ def downk():
     #print(df.describe())
       df.to_csv(path+str(r[1])+'.csv',encoding="gbk")
     cur.close() 
-    print (datetime1()++"end")
+    print (datetime1()+"end")
     conn.close() 
     
 
 if __name__ == "__main__":
 
-while(1): 
-    downk()
-time.sleep(60*60*24)    
+    while(1): 
+        downk()
+        print('down is ok!')
+        time.sleep(60*60*24)    
