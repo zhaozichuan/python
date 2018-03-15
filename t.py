@@ -1,13 +1,13 @@
-# -*- coding:utf-8 -*-
+import pandas as pd
+import pandas.io.data as web   # Package and modules for importing data; this code may change depending on pandas version
 import datetime
-
-#print time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) 
-# 格式化成Sat Mar 28 22:24:24 2016形式
-day=(datetime.date.today() - datetime.timedelta(days=1)).strftime('%Y%m%d')
-
-data_url = "http://quotes.money.163.com/service/chddata.html?code=&start=19990101&end=" + day + "&fields=TCLOSE;HIGH;LOW;TOPEN;LCLOSE;CHG;PCHG;TURNOVER;VOTURNOVER;VATURNOVER;TCAP;MCAP"
-   
-print(data_url)
-# 将格式字符串转换为时间戳
-#a = "Sat Mar 28 22:24:24 2016"
-#print time.mktime(time.strptime(a,"%a %b %d %H:%M:%S %Y"))
+ 
+# We will look at stock prices over the past year, starting at January 1, 2016
+start = datetime.datetime(2016,1,1)
+end = datetime.date.today()
+ 
+# Let's get Apple stock data; Apple's ticker symbol is AAPL
+# First argument is the series we want, second is the source ("yahoo" for Yahoo! Finance), third is the start date, fourth is the end date
+apple = web.DataReader("AAPL", "yahoo", start, end)
+ 
+type(apple)

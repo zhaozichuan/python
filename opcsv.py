@@ -28,8 +28,8 @@ def datetime1():
 
 
 def downk():
-    path = '/data/k/'
-    
+#    path = 'data/k/'
+    path = 'D:\\zzc\Kfile'
     day=(datetime.date.today() - datetime.timedelta(days=1)).strftime('%Y%m%d')
     print (datetime1()+"start")
     
@@ -38,7 +38,7 @@ def downk():
     cur = conn.cursor()  
     cur.execute("SELECT * FROM stock")
     for r in cur:  
-    #  print("row_number:" , (cur.rownumber) )          
+      print("row_number:" , (cur.rownumber) )          
     #  print("id:"+str(r[0])+" code:"+str(r[1])+" name:"+str(r[2]))
       
       if str(r[1]).startswith('6'):
@@ -60,8 +60,7 @@ def downk():
     
 
 if __name__ == "__main__":
-
     while(1): 
-        downk()
-        print('down is ok!')
-        time.sleep(60*60*24)    
+      downk()
+      print('down is ok!')
+      time.sleep(60*60*24)    
