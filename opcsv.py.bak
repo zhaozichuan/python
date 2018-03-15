@@ -1,0 +1,21 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Mar 15 08:29:02 2018
+
+@author: Administrator
+"""
+
+import pandas as pd
+"""
+path = r'D:\zzc\HQ_ALL\hq\fileKLine\600030.csv'
+f = open(path,'r') #mac不用这行，直接pd.read_csv(path)
+df = pd.read_csv(f)
+print(df.columns)
+print(df.index)
+#print(data.describe())
+"""
+
+data_url = "http://quotes.money.163.com/service/chddata.html?code=600030&start=19990101&end=20180313&fields=TCLOSE;HIGH;LOW;TOPEN;LCLOSE;CHG;PCHG;TURNOVER;VOTURNOVER;VATURNOVER;TCAP;MCAP";
+df = pd.read_csv(data_url,encoding="utf-8")
+print(df)
+#x.to_csv('data3out.csv')

@@ -46,12 +46,12 @@
    <slot>slot1()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>97</x>
-     <y>109</y>
+     <x>98</x>
+     <y>103</y>
     </hint>
     <hint type="destinationlabel">
-     <x>284</x>
-     <y>147</y>
+     <x>274</x>
+     <y>180</y>
     </hint>
    </hints>
   </connection>

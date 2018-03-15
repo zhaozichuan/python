@@ -29,4 +29,4 @@ class Ui_Dialog(object):
         self.pushButton.setText(_translate("Dialog", "PushButton"))
 
     def slot1(self):
-    	  QtWidgets.QMessageBox.information(self.pushButton,"aa","赵子川 yy") 
+    	  QtWidgets.QMessageBox.information(self.pushButton,"aa","这是第一个PyQt5 GUI程序") 
