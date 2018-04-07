@@ -4,7 +4,7 @@
 @contact: QQ:2089973054 email:xjc@yucezhe.com
 """
 import pandas as pd
-
+import numpy as np
 
 # ========== 从原始csv文件中导入股票数据，以浦发银行sh600000为例
 
@@ -37,13 +37,14 @@ ma_list = [5, 20, 60]
 
 # 计算简单算术移动平均线MA - 注意：stock_data['close']为股票每天的收盘价
 for ma in ma_list:
-    stock_data['MA_' + str(ma)] = pd.rolling_mean(stock_data['close'], ma)
+#    stock_data['MA_' + str(ma)] = pd.rolling_mean(stock_data['close'], ma)
+     stock_data['MA_' + str(ma)] =stock_data['close'].rolling(window=ma,center=False).mean()
 
 
 # 计算指数平滑移动平均线EMA
 for ma in ma_list:
-    stock_data['EMA_' + str(ma)] = pd.ewma(stock_data['close'], span=ma)
-
+#    stock_data['EMA_' + str(ma)] = pd.ewma(stock_data['close'], span=ma)
+     stock_data['EMA_' + str(ma)] = stock_data['close'].ewm(span=ma,min_periods=0,adjust=True,ignore_na=False).mean()
 
 # 将数据按照交易日期从近到远排序
 stock_data.sort_values(by='tradeDate', ascending=False, inplace=True)
