@@ -28,8 +28,8 @@ def datetime1():
 
 
 def downk():
-    path = '/data/k/'
- #   path = 'D:\\zzc\Kfile'
+#    path = '/data/k/'
+    path = 'D:\\zzc\\kfile\\'
 #    day=(datetime.date.today() - datetime.timedelta(days=1)).strftime('%Y%m%d')
     day=(datetime.date.today()).strftime('%Y%m%d')
       
@@ -62,7 +62,7 @@ def downk():
     
 
 if __name__ == "__main__":
-    while(1): 
+#    while(1): 
       downk()
-      print('down is ok!')
-      time.sleep(60*60*24)    
+#      print('down is ok!')
+#      time.sleep(60*60*24)    
